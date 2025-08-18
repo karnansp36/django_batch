@@ -16,7 +16,7 @@ def create_post(request):
 
 def post_list(request):
     posts = UserPost.objects.all()
-    return render(request, 'post_list.html', {"posts":posts})
+    return render(request, 'post_list.html', {"posts":posts, "role":"user"})
 
 def post_only(request,post_id):
     post = UserPost.objects.get(id=post_id)

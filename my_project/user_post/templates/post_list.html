@@ -1,21 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>
+{% extends "base.html" %}
+
+{% block title %}Post List{% endblock %}
+
+
+{% block content %}
+{% include "button.html" %}
+  <div>
         
         {% for x in posts %}
-             <h1>{{ x.title }}</h1>
+        {% if role == 'admin' %}
+            <h1 style="background-color: green;">{{ x.title }}</h1>
             {{ x.content }}
             <a href="details/{{ x.id }}">click here to details</a>
-            <h1>loop has been ended</h1>
+        
+        {% elif role == 'user' %}
+            <h1 style="background-color: blue;">{{ x.title }}</h1>
+            {{ x.content }}
+            <a href="details/{{ x.id }}">click here to details</a>
+        {% endif %}
+        <!-- {% if x.title == 'django' %}
+             <h1 style="background-color: red;">{{ x.title }}</h1>
+            {{ x.content }}
+            <a href="details/{{ x.id }}">click here to details</a>
+        {% endif %} -->
         {% endfor %}
+            <h1>loop has been ended</h1>
 
-        posts
-    </h1>
-</body>
-</html>
+    </div>
+
+
+{% endblock %}
+
+
+ {% block pricing %}
+
+
+    <h1>This is pricing cards</h1>
+{% endblock %}

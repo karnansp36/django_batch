@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 style="background-color: red;">This is navbar</h1>
+    {% block content %}
+    {% endblock %}
+    {% block pricing %}
+    {% endblock %}
+    <img src="{% static 'assets/logo.png' %}" alt="">
+    <footer style="background-color: blue;">footer</footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
