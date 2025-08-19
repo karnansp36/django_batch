@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for x in messages %}
+        {% if x.tags == 'error' %}
+            <h1 style="color: red;">{{ x }}</h1>
+        {% elif x.tags == 'success' %}
+            <h1 style="color: green;">{{ x }}</h1>
+        {% else %}
+            <h1>{{ x }}</h1>
+        {% endif %}
+        
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create User</button>
+    </form>
+</body>
+</html>
