@@ -24,6 +24,5 @@ def image_create_view(request):
             messages.success(request, "Image uploaded successfully")
         else:
             messages.error(request, "Error in image upload")
-    else:
-        form = ImageForm()
-    return render(request, 'image_upload.html', {"form": form})
+
+    return render(request, 'image_upload.html', {"form": ImageForm()})
