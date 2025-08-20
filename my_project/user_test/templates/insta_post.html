@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        {% for x in images %}
+            {{x.description}}
+            <img src="{{ x.image.url }}" alt="">
+            <!-- <iframe src="" frameborder="0"></iframe> -->
+            {% if x.files %}
+                <a href="{{ x.files.url }}" download>Download File</a>
+                <embed src="{{ x.files.url }}" type="application/pdf">
+                <!-- <object data="{{ x.files.url }}" type="files"></object> -->
+
+                <!-- <iframe src="{{ x.files.url }}" frameborder="0"></iframe> -->
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -13,5 +13,5 @@ class UserForm(forms.ModelForm):
 class ImageForm(forms.ModelForm):
     class Meta:
         model = image_storage
-        fields = ['image', 'description']
+        fields = ['image', 'description', 'files']
        

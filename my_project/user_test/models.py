@@ -11,3 +11,4 @@ class User_db(models.Model):
 class image_storage(models.Model):
     image = models.ImageField(upload_to='images/')
     description = models.TextField(blank=True, null=True)
+    files = models.FileField(upload_to='files/', blank=True, null=True )
