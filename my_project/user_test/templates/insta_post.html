@@ -11,12 +11,14 @@
             {{x.description}}
             <img src="{{ x.image.url }}" alt="">
             <!-- <iframe src="" frameborder="0"></iframe> -->
-            {% if x.files %}
-                <a href="{{ x.files.url }}" download>Download File</a>
-                <embed src="{{ x.files.url }}" type="application/pdf">
-                <!-- <object data="{{ x.files.url }}" type="files"></object> -->
+             {% if x.files %}
+                <p>
+                    <a href="{{ x.files.url }}" download>Download File</a>
+                </p>
+                <iframe src="{% url 'view_pdf' x.id %}" width="800" height="600"></iframe>
 
-                <!-- <iframe src="{{ x.files.url }}" frameborder="0"></iframe> -->
+                <!-- <embed src="{% url 'view_pdf' x.id %}" type="application/pdf" width="600" height="500"></embed> -->
+            {% endif %}
         {% endfor %}
     </div>
 </body>
